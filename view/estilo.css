@@ -1,0 +1,32 @@
+*{
+    background-color: rgb(243, 218, 250);
+}
+.home{    
+    text-align: center;
+    margin-top: 100px;
+}
+
+.botao_home{
+    background-color: transparent;
+    border: transparent;
+    letter-spacing: 3px;
+}
+
+.cadastro{
+    text-align: center;
+}
+
+button{
+    background-color: transparent;
+    color: blue;
+    border-radius: 10px;
+    border-color: pink;
+}
+
+.login{
+    text-align: center;
+}
+
+a{
+    color: blue;
+}

@@ -10,32 +10,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro</title>
+    <link rel="stylesheet" href="estilo.css">
 </head>
-<body>
+<body class="cadastro">
     <h1>Cadastro: </h1>
     <form method="POST">
-        <label>Nome completo: </label>
-        <input type="text" name="nome" id="nome"/><br>
+        <label>Nome Completo: </label>
+        <input type="text" name="nome" id="nome"/><br><br>
         <label>Usuário: </label>
-        <input type="text" name="usuarioCadastro" id="usuarioCadastro"/><br>
+        <input type="text" name="usuarioCadastro" id="usuarioCadastro" placeholder="gamertag"/><br><br>
         <label>E-mail: </label>
-        <input type="text" name="email" id="email"/><br>
+        <input type="email" name="email" id="email" placeholder="nome@exemplo.com"/><br><br>
         <label>Senha: </label>
-        <input type="text" name="senhaCadastro" id="senhaCadastro"/><br>
+        <input type="password" name="senhaCadastro" id="senhaCadastro" placeholder="Mínimo 8 caracteres" minlength="8"/><br><br>
         <button type="submit">Cadastrar
             <?php 
-                session_start();
-                $nome            = $_POST['nome'];
-                $usuarioCadastro = $_POST['usuarioCadastro'];
-                $email           = $_POST['email'];
-                $senhaCadastro   = $_POST['senhaCadastro'];
+                try{
+                    session_start();
+                    $nome            = $_POST['nome'];
+                    $usuarioCadastro = $_POST['usuarioCadastro'];
+                    $email           = $_POST['email'];
+                    $senhaCadastro   = $_POST['senhaCadastro'];
 
-                $cadastro = new Cadastro($nome, $usuarioCadastro, $email, $senhaCadastro);
-                
-                $_SESSION["usuarioCadastro"] = $usuarioCadastro;
-                $_SESSION["senhaCadastro"] = $senhaCadastro;
-                //Mudar para a tela 
-                header('location: login.php');
+                    $cadastro = new Cadastro($nome, $usuarioCadastro, $email, $senhaCadastro);
+                    
+                    $_SESSION["usuarioCadastro"] = $usuarioCadastro;
+                    $_SESSION["senhaCadastro"] = $senhaCadastro;
+                    //Mudar para a tela 
+                    header('location: login.php');
+                }catch(Except $erro){
+                    echo "Algo deu errado!!! <br><br> $erro";
+                }
             ?>
         </button>
         
