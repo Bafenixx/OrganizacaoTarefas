@@ -5,62 +5,64 @@
     ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastrar Tarefa</title>
+    <title>Cadastrar Tarefas</title>
+    <link rel="stylesheet" href="estilo.css">
 </head>
 <body>
     <h1>Cadastrar Tarefa</h1>
     <form method="POST">
-        <label> nome: </label>
+        <label>Tarefa: </label>
         <br> 
         <input type="text" name="tarefa" id="tarefa"/>
         <br> 
-        <label> semana: </label>
+        <label>Semana: </label>
         <br> 
-        <input type="number" name="semana" id="semana"/>
+        <input type="week" name="semana" id="semana"/>
         <br> 
-        <label> id: </label>
+        <label>ID: </label>
         <br> 
         <input type="number" name="id" id="id"/>
         <br> 
-        <label> status: </label>
+        <label>Status: </label>
         <br> 
         <input type="text" name="status" id="status"/>           
         <br> 
-        <label> data: </label>
+        <label>Data: </label>
         <br> 
-        <input type="number" name="data" id="data"/>
-        <br>
+        <input type="date" name="data" id="data"/>
+        <br><br>
 
-        <button type="submit">cadastrar</button>
-        <?php
-            try{
-                $tarefa     = $_POST['tarefa'];
-                $semana     = $_POST['semana'];
-                $id         = $_POST['id'];
-                $status     = $_POST['status'];           
-                $data       = $_POST['data'];
-               
+        <button type="submit">Cadastrar
+            <?php
+                try{
+                    $tarefa     = $_POST['tarefa'];
+                    $semana     = $_POST['semana'];
+                    $id         = $_POST['id'];
+                    $status     = $_POST['status'];           
+                    $data       = $_POST['data'];
+                
 
-                $t1 = new tarefas ($tarefa, $semana, $id, $status,
-                                        $data);
+                    $t1 = new tarefas ($tarefa, $semana, $id, $status,
+                                            $data);
 
-                $t1 -> adicionarTarefas();
-                                   
-              
-            }catch(Excpet $erro){
-                   echo "algo deu errado!!!<Br><br> $erro";
-            }  
-        ?>
+                    $t1 -> adicionarTarefas();
+                                    
+                
+                }catch(Excpet $erro){
+                    echo "Algo deu errado!!!<Br><br> $erro";
+                }  
+            ?>
+        </button><br><br>
     
         <?php
            echo $t1 ->listarTarefas();
         ?>
     </form>
-    <button><a href="index.php">voltar</a></button>
+    <button><a href="caminho.php">Voltar</a></button>
     </body>
     
     

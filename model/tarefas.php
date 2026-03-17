@@ -1,5 +1,5 @@
 <?php
-namespace Projeto\model;//determinando o local do arquivo pessoa
+    namespace Projeto\model;//determinando o local do arquivo pessoa
 
     class Tarefas{
 
@@ -40,13 +40,6 @@ namespace Projeto\model;//determinando o local do arquivo pessoa
              $this->$variavel =$novoDado;
          }//fim do set
     
-
-    
-         
-        
-                  
-       
-    
         public function adicionarTarefas(){
             $this->tarefas[] = [
                 "tarefa" => $this -> tarefa,
@@ -60,22 +53,14 @@ namespace Projeto\model;//determinando o local do arquivo pessoa
 
         public function listarTarefas(){
             foreach($this->tarefas as $t){
-                echo "tarefa: ".$t['tarefa']."<br>";
-                echo "semana: ".$t['semana']."<br>";
-                echo "id: ".$t['id']."<br>";
-                echo "pendente: ".($t['pendente']? "pendente":
+                echo "Tarefa: ".$t['tarefa']."<br>";
+                echo "Semana: ".$t['semana']."<br>";
+                echo "ID: ".$t['id']."<br>";
+                echo "Situação: ".($t['pendente']? "pendente":
                 "concluida"). "<br>";
-                echo "data: ".$t["data"]."<br><br>";
+                echo "Data: ".$t["data"]."<br><br>";
 
             }
         }
-
-      
-    
-    
-    
-    
-    
-     
-
     }
+?>
