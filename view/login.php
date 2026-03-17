@@ -39,7 +39,7 @@
                         echo "Usuário ou senha incorreto!";
                     }
                 }catch(Except $erro){
-                    echo "Algo deu errado!!! <br<br> $erro";
+                    echo "Algo deu errado! <br<br> $erro";
                 }
             ?>
         </button><br>
