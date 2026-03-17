@@ -34,7 +34,7 @@
                     $cadastro = new Cadastro($usuarioLogin, $senhaLogin, $_SESSION['usuarioCadastro'], $_SESSION['senhaCadastro']);
 
                     if($_SESSION['senhaCadastro'] == $senhaLogin && $_SESSION['usuarioCadastro'] == $usuarioLogin){
-                        header('location: tarefas.php');
+                        header('location: caminho.php');
                     }else{
                         echo "Usuário ou senha incorreto!";
                     }
